@@ -39,4 +39,8 @@ public class MemoryMemberRepo implements MemberRepository{
         return new ArrayList<>(store.values());
         // store 라는 해쉬맵속 모든 값들이 어레이리스트로 들어감
     }
+
+    public void clearStore() {
+        store.clear();
+    }
 }
