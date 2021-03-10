@@ -9,11 +9,16 @@ import java.util.Optional;
 
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepo();
+    private final MemberRepository memberRepository;
+
+
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     /*======================================================================
-    회원가입
-    */
+        회원가입
+        */
     public Long join(Member member) {
         // 이 회원가입을 하는 Join 메서드는 동일한 이름의 회원가입을 허용하지 않습니다.
 
