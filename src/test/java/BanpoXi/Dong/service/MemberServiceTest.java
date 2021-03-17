@@ -8,6 +8,7 @@ import BanpoXi.Dong.repository.MemberRepository;
 import BanpoXi.Dong.repository.MemoryMemberRepo;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
@@ -21,8 +22,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MemberServiceTest {
 
-    MemberService memberService = new MemberService();
-    MemoryMemberRepo memberRepo = new MemoryMemberRepo();
+    MemberService memberService;
+    MemoryMemberRepo memberRepo;
+
+
+    @BeforeEach
+    public void beforeeach() {
+        //  테스트는 독립적으로 실행되야하기 때문에 실행시마다 매번 만들어
+        memberRepo = new MemoryMemberRepo();
+        memberService = new MemberService(memberRepo);// 맴버서비스 입장에서 보면 내가 직접 new 하지않고 인스턴스 주입해줌
+        //이것이 DI (디펜던시 인젝션) >>
+
+    }
 
     @AfterEach
     public void afterEach() {
@@ -77,7 +88,7 @@ class MemberServiceTest {
         }
 
         memberService.join(member1);
-        assertThat(IllegalStateException.class,() -> memberService.join(member2));
+        //assertThat(IllegalStateException.class,()) -> memberService.join(member2);
 
 
     }
@@ -94,10 +105,10 @@ class MemberServiceTest {
 
         //when
         memberService.join(member1);
-        IllegalStateException e = assertThat(IllegalStateException.class, () -> memberService);
+        //IllegalStateException e = assertThat(IllegalStateException.class, () -> memberService);
 
 
-        assertThat(IllegalStateException.class,() -> memberService.join(member2));
+        //assertThat(IllegalStateException.class,() -> memberService.join(member2));
 
         //then
 
