@@ -4,16 +4,10 @@ import BanpoXi.Dong.domain.Member;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
 
-import BanpoXi.Dong.repository.MemberRepository;
-import BanpoXi.Dong.repository.MemoryMemberRepo;
-import org.assertj.core.api.Assertions;
+import BanpoXi.Dong.repository.MemoryMemberRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 
 //테스트를 만들어야 할 원래의 로직에서
@@ -23,13 +17,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class MemberServiceTest {
 
     MemberService memberService;
-    MemoryMemberRepo memberRepo;
+    MemoryMemberRepository memberRepo;
 
 
     @BeforeEach
     public void beforeeach() {
         //  테스트는 독립적으로 실행되야하기 때문에 실행시마다 매번 만들어
-        memberRepo = new MemoryMemberRepo();
+        memberRepo = new MemoryMemberRepository();
         memberService = new MemberService(memberRepo);// 맴버서비스 입장에서 보면 내가 직접 new 하지않고 인스턴스 주입해줌
         //이것이 DI (디펜던시 인젝션) >>
 

@@ -2,21 +2,17 @@ package BanpoXi.Dong.repository;
 
 import BanpoXi.Dong.domain.Member;
 //import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
-
-import javax.swing.text.html.Option;
 
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
-class MemoryMemberRepoTest {
+class MemoryMemberRepositoryTest {
 
 
-    MemoryMemberRepo repo = new MemoryMemberRepo();
+    MemoryMemberRepository repo = new MemoryMemberRepository();
 
     @AfterEach
     public void afterEachMySequence() {

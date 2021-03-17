@@ -4,7 +4,7 @@ import BanpoXi.Dong.domain.Member;
 
 import java.util.*;
 
-public class MemoryMemberRepo implements MemberRepository{
+public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>();
     // 실무에서는 동시성문제가 있을 수 있어 HashMap이 아니라 컨커런트해쉬맵을 쓴다 알아둬라

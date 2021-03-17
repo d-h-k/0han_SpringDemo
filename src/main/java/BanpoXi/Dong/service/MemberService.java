@@ -2,15 +2,19 @@ package BanpoXi.Dong.service;
 
 import BanpoXi.Dong.domain.Member;
 import BanpoXi.Dong.repository.MemberRepository;
-import BanpoXi.Dong.repository.MemoryMemberRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+//스프링 빈으로 등록해서 쓰면 얻는 이득점들 공유(뒤에서
+
+
 public class MemberService {
+    //이건 순수자바코드라서 스프링한테 알려줘야됭
 
     private final MemberRepository memberRepository;
-
 
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
