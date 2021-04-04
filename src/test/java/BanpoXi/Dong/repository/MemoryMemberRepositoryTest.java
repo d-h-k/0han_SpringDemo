@@ -10,7 +10,7 @@ import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.*;
 class MemoryMemberRepositoryTest {
-
+//이제부터는 테스트를 스프링이랑 엮어서 함
 
     MemoryMemberRepository repo = new MemoryMemberRepository();
 
