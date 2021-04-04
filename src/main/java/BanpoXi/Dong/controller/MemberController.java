@@ -1,7 +1,6 @@
 package BanpoXi.Dong.controller;
 
 import BanpoXi.Dong.domain.Member;
-import BanpoXi.Dong.repository.MemberRepository;
 import BanpoXi.Dong.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -50,7 +49,7 @@ public class MemberController {
     @GetMapping("/members")
     public String list(Model model) {
         List<Member> memberList = memberService.findMembers();
-        model.addAttribute("members",memberList);
+        model.addAttribute("members", memberList);
 
         return "members/memberList";
     }

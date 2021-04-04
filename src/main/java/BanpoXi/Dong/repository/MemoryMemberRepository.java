@@ -4,9 +4,9 @@ import BanpoXi.Dong.domain.Member;
 
 import java.util.*;
 
-public class MemoryMemberRepository implements MemberRepository{
+public class MemoryMemberRepository implements MemberRepository {
 
-    private static Map<Long, Member> store = new HashMap<>();
+    private static final Map<Long, Member> store = new HashMap<>();
     // 실무에서는 동시성문제가 있을 수 있어 HashMap이 아니라 컨커런트해쉬맵을 쓴다 알아둬라
     private static long sequence = 0L;
     // 동시성 문제 해결을 위해 어텀롱 이런걸 쓴다는

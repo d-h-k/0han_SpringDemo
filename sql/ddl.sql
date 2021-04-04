@@ -5,3 +5,7 @@ create table member
     name varchar(255),
     primary key (id)
 );
+--  INSERT INTO MEMBER (ID,NAME) VALUES ( 1 , 'jpppa' );
+--  INSERT INTO MEMBER (ID,NAME) VALUES ( 2 , 'java' );
+--  INSERT INTO MEMBER (ID,NAME) VALUES ( 2 , 'jaxx' );
+
